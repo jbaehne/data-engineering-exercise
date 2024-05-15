@@ -1,0 +1,5 @@
+collector:
+  base_url: http://openlibrary.org/subjects
+  subject: fantasy
+  output_location: /opt/spark/work-dir/src/fantasy/
+  threads: 4
