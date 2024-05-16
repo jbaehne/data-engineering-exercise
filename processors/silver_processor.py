@@ -36,5 +36,3 @@ query = bronze_stream.writeStream\
     .start()\
     .awaitTermination()
 
-# query.processAllAvailable()
-# query.stop()

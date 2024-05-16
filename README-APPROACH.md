@@ -4,7 +4,7 @@
 
 The code, configs, etc are all encapsulated into a Docker container. 
 
-Build the image:        `docker built . -t challenge-image`
+Build the image:        `docker build . -t challenge-image`
 
 Run the container:       `docker run -it -t challenge-image bash`
 
@@ -109,6 +109,8 @@ contain the required information to reprocess the call. Seperate workers should 
 4. **python package**: The script should be broken down into seperate files and a python package should be created 
 for the code that is published to a pypi server.
 5. **Test**: Unit tests are 100% must. 
+6 **Separate Docker Image** if a containerized compute engine is chosen, then a image should be published with only
+the collector code.
 
 ## Data Pipelines
 
@@ -124,6 +126,9 @@ being worth abstracting.
 on files is not as ideal as a push approach. THis is due to the listing that is required with a file sink
 5. **Test**: Unit tests are 100% must. Also consider running spark locally in your tests to mock scenarios and ensure
 that your code procudes the expected results with the mocked scenarios.
+6. **Table Manager**: In the code, there is a script that creates tables. As this project is moved into prod, the need
+for a "Table Manager" that stores the table defs, properties etc, would be required. This should be a separate 
+service from the pipelines.
  
  
 ## Observability

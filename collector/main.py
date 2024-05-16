@@ -93,7 +93,7 @@ class SubjectCollector(BaseCollector):
                 raise e
             else:
                 self.get_data(config, retry_amt, retry_limit)
-        finally:
+        else:
             self.write_data(config, data.get("works", []))
 
     def collect(self):

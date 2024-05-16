@@ -11,13 +11,13 @@ explode_authors.select(F.col("author_explode.name").alias("author"), "title")\
     .write.csv("/opt/spark/work-dir/reports/authors_and_titles")
 
 books_per_year = explode_authors\
-    .groupby("author_explode.name", "first_publish_year")\
+    .groupby("key", "author_explode.name", "first_publish_year")\
     .count()
 
 books_per_year.repartition(1).write.csv("/opt/spark/work-dir/reports/books_by_year")
 
 avg_per_year = books_per_year\
-    .groupby("name")\
+    .groupby("key", "name")\
     .agg(F.avg("count"))\
     .repartition(1)\
     .write.csv("/opt/spark/work-dir/reports/avg_books_by_year")

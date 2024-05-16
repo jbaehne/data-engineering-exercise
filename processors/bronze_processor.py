@@ -9,8 +9,7 @@ query = df.writeStream\
     .format("iceberg")\
     .outputMode("append")\
     .option("mergeSchema", "true")\
-    .option("checkPointLocation", "/opt/spark/work-dir/bronze-checkpoints")\
-    .trigger(availableNow=True)\
+    .option("checkPointLocation", "/opt/spark/work-dir/bronze-checkpoints") \
     .toTable("openlibrary.subjects_bronze")
 
 query.processAllAvailable()
