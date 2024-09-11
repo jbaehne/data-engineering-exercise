@@ -1,0 +1,23 @@
+# Virtual environment
+venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+.env
+rp-aws/
+rp-data-aws/
+
+# Environment variables
+.env
+
+# IDE specific files
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

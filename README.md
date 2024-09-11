@@ -7,16 +7,17 @@ Design a simplified version of a data pipeline using a real-world scenario. The 
  You are a part of a small online book company and your company wants to expand on the books provided by their online store. Your task if you choose to accept it, is to develop a mini data pipeline that extracts data from [Open Library's API](https://openlibrary.org/developers/api), focusing on a [subject](https://openlibrary.org/dev/docs/api/subjects) of your choice.
 
 This pipeline will be generalized for production use at a later date as the company wishes to perform similar analysis in the future. The data to be extracted includes a list of authors and books related to your chosen subject.
-
+import requests
+url = "https://openlibrary.org/search.json?q=test"
+headers = {
+    "User-Agent": "MyAppName/1.0 (myemail@example.com)"
+}
+response = requests.get(url, headers=headers)
 ## Key Deliverables
 1. **Architecture Overview**:
    - Briefly outline the architecture and the technologies or services you would use. As we use AWS, mention any relevant AWS services.
    - Include a simple data model diagram.
 
-2. **Python Script**:
-   - Write a Python script to pull data from the API.
-   - Focus on extracting relevant details for authors and books.
-   - You may mock the insertion into a database due to time constraints.
 
 3. **Sample Data Output**:
    - Provide CSV outputs for 'Authors' and 'Books'.
